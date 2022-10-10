@@ -36,16 +36,38 @@
 
 <body class="box">
     <div class="btn">
-        <button onclick="alert(+x + +y)" class="btn__item">+</button>
-        <button onclick="alert(x - y)" class="btn__item">-</button>
-        <button onclick="alert(x * y)" class="btn__item">*</button>
-        <button onclick="alert(x / y)" class="btn__item">/</button>
+        <button onclick="makePlus()" class="btn__item">+</button>
+        <button onclick="makeMinus()" class="btn__item">-</button>
+        <button onclick="makeMultiply()" class="btn__item">*</button>
+        <button onclick="makeSplit()" class="btn__item">/</button>
     </div>
     <script>
-        let x = prompt('Первое число');
-        let y = prompt('Второе число');
 
+        function makePlus() {
+            const a = prompt('Введите первое число');
+            const b = prompt('Введите второе число');
+            const result = Number(a) + Number(b);
+            alert(result);
+        }
 
+        function makeMinus() {
+            const a = prompt('Введите первое число');
+            const b = prompt('Введите второе число');
+            const result = (+a - +b);
+            alert(result);
+        }
+        function makeMultiply() {
+            const a = prompt('Введите первое число');
+            const b = prompt('Введите второе число');
+            const result = Number(a) * Number(b);
+            alert(result);
+        }
+        function makeSplit() {
+            const a = prompt('Введите первое число');
+            const b = prompt('Введите второе число');
+            const result = (+a / +b);
+            alert(result);
+        }
     </script>
 </body>
 
