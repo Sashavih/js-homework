@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .box__item {
+            padding: 10em;
+            background-color: rgb(101, 134, 165);
+        }
+    </style>
+</head>
+
+<body>
+    <article class="box">
+        <div class="box__item" id="one" onclick="changeColor()">1</div>
+        <div class="box__item" id="two" onclick="changeColor2()">2</div>
+        <div class="box__item" id="three" onclick="changeColor3()">3</div>
+    </article>
+
+    <script>
+        function changeColor() {
+            document.getElementById("one").style.backgroundColor = "#ba4583";
+        }
+        function changeColor2() {
+            document.getElementById("two").style.backgroundColor = "#79aa6b";
+        }
+        function changeColor3() {
+            document.getElementById("three").style.backgroundColor = "#0d6e79";
+        }
+
+    </script>
+</body>
+
+</html>

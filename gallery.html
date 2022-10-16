@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #travelImage {
+            max-width: 40%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="https://images.ctfassets.net/itrs3p223g0s/2RbOacx6d1RYNCLOtDmvg/f71f77059110c404db7874ad0d5d6fb6/canadians-travel_1920x1280.jpg"
+            alt="plane" id="travelImage"><br>
+        <button onclick="changeMe2()">Back</button>
+        <button onclick="changeMe()">Next</button>
+    </div>
+    <script>
+        function changeMe() {
+            let travelImage = document.getElementById('travelImage');
+            travelImage.src = "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/uk/advisor/wp-content/uploads/2021/03/worldwide-travel-insurance.jpg";
+        }
+        function changeMe2() {
+            let travelImage2 = document.getElementById('travelImage');
+            travelImage.src = "https://images.ctfassets.net/itrs3p223g0s/2RbOacx6d1RYNCLOtDmvg/f71f77059110c404db7874ad0d5d6fb6/canadians-travel_1920x1280.jpg"
+
+        }
+    </script>
+
+</body>
+
+</html>
