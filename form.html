@@ -28,8 +28,8 @@
             color: rgb(28, 28, 28);
         }
 
-        .box {
-            background-color: rgb(81, 235, 184);
+        .body {
+            background-color: rgb(33, 184, 134);
 
         }
 
@@ -38,7 +38,7 @@
             text-align: center;
             width: 20%;
             height: 60vh;
-            margin: 5em auto auto auto;
+            margin: 2em auto auto auto;
             background-color: white;
             display: flex;
             flex-direction: column;
@@ -81,12 +81,33 @@
         #btn {
             border: none;
         }
+
+        .theme {
+            text-align: center;
+        }
+
+        .select {
+
+            margin-top: 6em;
+            width: 8.5em;
+            height: 3em;
+            border-radius: 5px;
+
+        }
     </style>
 
 </head>
 
-<body class="box">
+<body class="body">
     <main>
+        <div class="theme"><select class="select" name="theme" id="theme"></div>
+        <option value="">Choose theme</option>
+        <option value="herb">Herb</option>
+        <option value="rose">Rose</option>
+        <option value="sea">Sea</option>
+        <option value="cosmos">Cosmos</option>
+
+        </select>
         <form class="form">
             <h1 class="title">Registration</h1>
 
@@ -104,6 +125,30 @@
 
     </main>
     <script>
+        const body = document.querySelector('.body');
+        const select = document.querySelector('.select');
+
+
+        function changeTheme() {
+            switch (select.value) {
+                case 'herb':
+                    body.style.backgroundColor = 'rgb(33, 184, 134)';
+                    break;
+                case 'rose':
+                    body.style.backgroundColor = '#ed3bc7';
+                    break;
+                case 'sea':
+                    body.style.backgroundColor = '#0e758a';
+                    break;
+                case 'cosmos':
+                    body.style.backgroundColor = '#380d70';
+                    break;
+            }
+
+        }
+        select.addEventListener('change', changeTheme);
+
+
 
         /*let items = document.getElementsByClassName('form__item_color')[0];
         items.addEventListener("click", function (items) { element.classList.toggle('form__item_bg') }); */
@@ -136,9 +181,9 @@
                 alert('Пароли не совпадают.');
 
             }
-            else if (tel.value.length < 9) {
+            else if (tel.value.length !== 12) {
                 evt.preventDefault();
-                alert('Слишком короткий номер телефона.');
+                alert('Введите корректный номер телефона.');
             }
 
             else {
