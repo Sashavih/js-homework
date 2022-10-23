@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        :focus::-webkit-input-placeholder {
+            color: transparent
+        }
+
+        :focus::-moz-placeholder {
+            color: transparent
+        }
+
+        :focus:-moz-placeholder {
+            color: transparent
+        }
+
+        :focus:-ms-input-placeholder {
+            color: transparent
+        }
+
+        .title {
+            font-size: x-large;
+            color: rgb(28, 28, 28);
+        }
+
+        .box {
+            background-color: rgb(81, 235, 184);
+
+        }
+
+        .form {
+            border-radius: 5px;
+            text-align: center;
+            width: 20%;
+            height: 60vh;
+            margin: 5em auto auto auto;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 1em;
+
+
+        }
+
+        .form__item {
+            margin: auto;
+            outline: 0;
+            width: 70%;
+            height: 3em;
+            border-radius: 5px;
+            border: 1px solid rgb(167, 167, 167);
+            box-shadow: none;
+
+        }
+
+        .form__item_color {
+            background-color: rgba(167, 167, 167, 0.164);
+        }
+
+        .form__item_bg {
+            background-color: rgba(76, 76, 76, 0.164);
+        }
+
+
+        .button {
+            background: linear-gradient(rgb(47, 172, 130), rgb(68, 220, 116));
+            color: white;
+            transition: 1s;
+        }
+
+        .button:hover {
+            transform: scale(1.09);
+        }
+
+        #btn {
+            border: none;
+        }
+    </style>
+
+</head>
+
+<body class="box">
+    <main>
+        <form class="form">
+            <h1 class="title">Registration</h1>
+
+            <input type="text" id="text" class="form__item form__item_color" placeholder="Login" name="login" required>
+            <input type="email" id="email" class="form__item form__item_color" placeholder="Email" name="email"
+                required>
+            <input type="password" id="password" class="form__item form__item_color" placeholder="Password"
+                name="password" required>
+            <input type="password" id="approve" class="form__item form__item_color" placeholder="Confirm password"
+                name="password" required>
+            <input type="tel" id="tel" class="form__item form__item_color" placeholder="Phone number (+7...)" name="tel"
+                required>
+            <input type="submit" id="btn" onclick="sendMe()" class="form__item button" value="Send" name="button">
+        </form>
+
+    </main>
+    <script>
+
+        /*let items = document.getElementsByClassName('form__item_color')[0];
+        items.addEventListener("click", function (items) { element.classList.toggle('form__item_bg') }); */
+
+
+        let login = document.getElementById('text')
+        let email = document.getElementById('email')
+        let password = document.getElementById('password')
+        let conf = document.getElementById('approve')
+        let tel = document.getElementById('tel')
+        const form = document.querySelector('.form');
+        const inputs = document.querySelectorAll('.form__item');
+
+
+
+        form.onsubmit = function sendMe(evt) {
+            if (login.value.length < 5) {
+                evt.preventDefault();
+                alert('Логин должен содержать минимум 5 символов.');
+            }
+            else if (password.value.length < 6) {
+                evt.preventDefault();
+                alert('Пароль должен содержать 6 знаков.');
+            }
+            else if (inputs.value == 0) {
+                evt.preventDefault();
+            }
+            else if (conf.value !== password.value) {
+                evt.preventDefault();
+                alert('Пароли не совпадают.');
+
+            }
+            else if (tel.value.length < 9) {
+                evt.preventDefault();
+                alert('Слишком короткий номер телефона.');
+            }
+
+            else {
+                alert('Спасибо за регистрацию!');
+            }
+        };
+
+
+
+    </script>
+
+</body>
+
+</html>
